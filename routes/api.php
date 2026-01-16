@@ -9,4 +9,5 @@ Route::post('logout', [AuthController::class, 'logout'])->middleware('auth:sanct
 Route::prefix('user')->middleware('auth:sanctum')->group(function () {
     Route::get('/', [UserController::class, 'userLogged']);
 });
+Route::post('user', [UserController::class, 'store']);
 

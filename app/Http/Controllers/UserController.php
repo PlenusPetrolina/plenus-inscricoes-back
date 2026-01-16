@@ -18,5 +18,10 @@ class UserController extends Controller
     {
         return $this->userRepository->current($request);
     }
+    public function store(Request $request)
+    {
+        $data = $request->all();
+        return $this->userRepository->create($data);
+    }
 
 }

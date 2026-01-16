@@ -19,7 +19,7 @@ class AuthRepository
     {
         try {
             $validatedData = $request->validate([
-                'username' => 'required',
+                'email' => 'required',
                 'password' => 'required'
             ]);
         } catch (ValidationException $e) {
@@ -29,7 +29,7 @@ class AuthRepository
                 'errors' => $e->errors()
             ], 422);
         }
-        $user = $this->userRepository->byUsername($request->username);
+        $user = $this->userRepository->byUser($request->email);
 
         if (!$user || !Hash::check($request->password, $user->password)) {
             return response()->json([
