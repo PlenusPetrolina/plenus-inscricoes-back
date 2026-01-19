@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->string('email')->unique();
+            $table->foreignId('perfil_id')->constrained('perfil');
+            $table->string('password');
             $table->timestamps();
         });
     }

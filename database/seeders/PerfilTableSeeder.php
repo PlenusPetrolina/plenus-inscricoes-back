@@ -15,7 +15,8 @@ class PerfilTableSeeder extends Seeder
     {
     $perfis =[
         ['nome' => 'Responsavel'],
-        ['nome' => 'Coordernador'],
+        ['nome' => 'Coordenador'],
+        ['nome' => 'Financeiro'],
         ['nome' => 'Administrador'],
 
     ];

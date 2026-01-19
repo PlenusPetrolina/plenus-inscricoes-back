@@ -20,6 +20,12 @@ class AuthController extends Controller
 
     }
 
+    function loginAdmin(Request $request)
+    {
+        return $this->authRepository->loginAdmin($request);
+
+    }
+
     function logout(Request $request)
     {
         return $this->authRepository->logout($request);
