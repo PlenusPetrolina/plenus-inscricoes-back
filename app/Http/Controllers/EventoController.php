@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repositories\EventoRepository;
+use function Laravel\Prompts\search;
 
 class EventoController extends Controller
 {
@@ -14,9 +15,13 @@ class EventoController extends Controller
         $this->eventoRepository = $eventoRepository;
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->query("search")) {
+            return $this->eventoRepository->queryParams($request->query("search"));
+        }
         return $this->eventoRepository->all();
+
     }
 
     public function show($id)
@@ -35,4 +40,5 @@ class EventoController extends Controller
         $data = $request->all();
         return $this->eventoRepository->update($data, $id);
     }
+
 }

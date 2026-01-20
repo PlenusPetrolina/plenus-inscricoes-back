@@ -47,4 +47,14 @@ class EventoRepository
         }
          return response()->json(['message' => 'Erro ao atualizar Evento'], 500);
     }
+
+    public function queryParams($params){
+        $data = $this->model->where('titulo','LIKE','%'.$params.'%')->get();
+        if($data->count() > 0){
+            return response()->json($data, 200);
+        }else{
+            return response()->json(['message'=> 'Evento não encontrado'], 404);
+        }
+    }
+
 }
