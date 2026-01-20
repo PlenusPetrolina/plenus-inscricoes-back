@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class InscricaoStatus extends Model
 {
-    //
+    protected $fillable = [
+        'nome',
+    ];
 }

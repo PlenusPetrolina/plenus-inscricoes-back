@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             PerfilTableSeeder::class,
-            // UserSeeder::class,
+            UserSeeder::class,
             InscricaoStatus::class,
         ]);
     }

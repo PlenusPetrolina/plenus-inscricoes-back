@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{AuthController,UserController, AdminController};
+use App\Http\Controllers\{AuthController,UserController, AdminController, EventoController, InscricaoController};
 use Illuminate\Support\Facades\Route;
 
 Route::post('login', [AuthController::class, 'login']);
@@ -12,4 +12,14 @@ Route::prefix('user')->middleware('auth:sanctum')->group(function () {
 });
 Route::post('user', [UserController::class, 'store']);
 Route::post('admin', [AdminController::class, 'store']);
+
+Route::get('eventos', [EventoController::class, 'index']);
+Route::post('evento', [EventoController::class, 'store']);
+Route::get('evento/{id}', [EventoController::class, 'show']);
+Route::put('evento/{id}', [EventoController::class, 'update']);
+
+Route::get('inscricoes', [InscricaoController::class, 'index']);
+Route::post('inscricao', [InscricaoController::class, 'store']);
+Route::get('inscricao/{id}', [InscricaoController::class, 'show']);
+Route::put('inscricao/{id}', [InscricaoController::class, 'update']);
 

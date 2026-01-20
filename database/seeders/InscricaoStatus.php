@@ -17,6 +17,8 @@ class InscricaoStatus extends Seeder
         ['nome' => 'Pendente'],
         ['nome' => 'Confirmada'],
         ['nome' => 'Cancelada'],
+        ['nome' => 'Pagamento Pendente'],
+        ['nome' => 'Pagamento Confirmado'],
 
     ];
 
