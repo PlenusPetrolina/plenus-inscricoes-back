@@ -43,7 +43,7 @@ class AuthRepository
             return response()->json([
                 'access_token' => $token,
                 'token_type' => 'Bearer',
-               'user' => $user->with('perfil')->first()
+                 'user' => $user
             ]);
 
         }
