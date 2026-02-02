@@ -15,12 +15,12 @@ class EventoRepository
 
     public function all()
     {
-        return response()->json($this->model->all(), 200);
+        return response()->json($this->model->with(['segmento','serie'])->get(), 200);
     }
 
     public function find($id)
     {
-        $data =  $this->model->find($id);
+         $data = $this->model->find($id)->with(['segmento','serie'])->first();
         if($data){
          return response()->json($data, 200);
         }else{
@@ -49,7 +49,7 @@ class EventoRepository
     }
 
     public function queryParams($params){
-        $data = $this->model->where('titulo','LIKE','%'.$params.'%')->get();
+        $data = $this->model->where('titulo','LIKE','%'.$params.'%')->with(['segmento','serie'])->get();
         if($data->count() > 0){
             return response()->json($data, 200);
         }else{

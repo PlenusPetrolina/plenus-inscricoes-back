@@ -20,11 +20,22 @@ class Evento extends Model
         'coordenacao',
         'areas',
         'admin_id',
-        'vagas'
+        'vagas',
+        'serie_id',
+        'segmento_id',
     ];
     protected $casts = [
     'data' => 'datetime:d/m/Y',
 ];
 
+public function segmento()
+{
+    return $this->belongsTo(Segmento::class);
+}
+
+public function serie()
+{
+    return $this->belongsTo(Serie::class);
+}
 
 }

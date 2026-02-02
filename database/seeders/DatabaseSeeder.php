@@ -17,6 +17,9 @@ class DatabaseSeeder extends Seeder
             PerfilTableSeeder::class,
             UserSeeder::class,
             InscricaoStatus::class,
+            SegmentosSeeder::class,
+            SeriesSeeder::class,
+            SegmentosSeriesSeeder::class,
         ]);
     }
 }

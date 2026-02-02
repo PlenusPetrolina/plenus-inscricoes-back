@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{AuthController,UserController, AdminController, EventoController, InscricaoController};
+use App\Http\Controllers\{AuthController,UserController, AdminController, EventoController, InscricaoController, SegmentoController};
 use Illuminate\Support\Facades\Route;
 
 Route::post('login', [AuthController::class, 'login']);
@@ -22,4 +22,8 @@ Route::get('inscricoes', [InscricaoController::class, 'index']);
 Route::post('inscricao', [InscricaoController::class, 'store']);
 Route::get('inscricao/{id}', [InscricaoController::class, 'show']);
 Route::put('inscricao/{id}', [InscricaoController::class, 'update']);
+Route::prefix('segmentos')->group(function () {
+    Route::get('/', [SegmentoController::class, 'index']);
+});
+
 
