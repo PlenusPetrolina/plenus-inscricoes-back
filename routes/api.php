@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{AuthController,UserController, AdminController, EventoController, InscricaoController, SegmentoController};
+use App\Http\Controllers\{AuthController,UserController, AdminController, EventoController, InscricaoController, SegmentoController, AlunoController };
 use Illuminate\Support\Facades\Route;
 
 Route::post('login', [AuthController::class, 'login']);
@@ -25,5 +25,7 @@ Route::put('inscricao/{id}', [InscricaoController::class, 'update']);
 Route::prefix('segmentos')->group(function () {
     Route::get('/', [SegmentoController::class, 'index']);
 });
+Route::post('/alunos/import', [AlunoController::class, 'import']);
+Route::get('/alunos', [AlunoController::class,'index']);
 
 
