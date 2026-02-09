@@ -24,4 +24,10 @@ class UserController extends Controller
         return $this->userRepository->create($data);
     }
 
+    public function searchByCpf(Request $request)
+    {
+        $cpf = $request->route('cpf');
+        return $this->userRepository->findByCpf($cpf);
+    }
+
 }

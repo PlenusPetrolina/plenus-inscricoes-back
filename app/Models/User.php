@@ -22,6 +22,8 @@ class User extends Authenticatable
         'nome',
         'email',
         'whatsapp',
+        'filhos',
+        'cpf',
         'perfil_id',
         'password',
     ];

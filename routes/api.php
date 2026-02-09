@@ -11,6 +11,7 @@ Route::prefix('user')->middleware('auth:sanctum')->group(function () {
     Route::get('/', [UserController::class, 'userLogged']);
 });
 Route::post('user', [UserController::class, 'store']);
+Route::get('responsavel/{cpf}', [UserController::class, 'searchByCpf']);
 Route::post('admin', [AdminController::class, 'store']);
 
 Route::get('eventos', [EventoController::class, 'index']);

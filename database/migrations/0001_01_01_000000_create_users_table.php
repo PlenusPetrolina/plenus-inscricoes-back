@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('nome');
             $table->string('email')->unique();
             $table->string('whatsapp');
+            $table->string('filhos')->nullable();
+            $table->string('cpf')->nullable();
             $table->foreignId('perfil_id')->constrained('perfil');
             $table->string('password');
             $table->timestamps();
