@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{AuthController,UserController, AdminController, EventoController, InscricaoController, SegmentoController, AlunoController };
+use App\Http\Controllers\{AuthController,UserController, AdminController, EventoController, InscricaoController, SegmentoController, AlunoController, SerieController };
 use Illuminate\Support\Facades\Route;
 
 Route::post('login', [AuthController::class, 'login']);
@@ -28,5 +28,6 @@ Route::prefix('segmentos')->group(function () {
 });
 Route::post('/alunos/import', [AlunoController::class, 'import']);
 Route::get('/alunos', [AlunoController::class,'index']);
+Route::get('/series', [SerieController::class,'index']);
 
 
